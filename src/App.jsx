@@ -7,9 +7,9 @@ function App() {
   <Router>
     <Routes>
        <Route path="/" element={<LoginPage/>}/>
-          <Route path="/code" element={<CodeCompiler />} /> 
-        </Routes>
-        </Router>
+        <Route path="/code" element={<CodeCompiler />} /> 
+    </Routes>
+  </Router>
 //  <CodeCompiler/>
   );
 }
