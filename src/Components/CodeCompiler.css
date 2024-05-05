@@ -1,23 +1,23 @@
-/* .container {
-    text-align: center;
-    margin-top: 20px;
-  } */
+
   
   .code-input {
-    height: 200px; /* Adjust as needed */
+    /* height: 50%;  */
+    height: 350px;
     resize: vertical; /* Allow vertical resizing */
     margin-top: 30px;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
   }
   
   .submit-btn {
-    margin-top: 10px;
-    background-color: #1bee22; /* Green */
+    margin-top: 15px;
+    background-color: #30b304; /* Green */
     color: rgb(255, 255, 255);
-    padding: 10px 20px;
+    padding: 5px 5px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 23px;
+    font-size: 21px;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -37,13 +37,25 @@
   
   .left-panel {
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #2b2b2b;
     display: flex;
     flex-direction: column;
   }
-  
+  .sellang{
+    font-size: 20px;
+    font-family: system-ui;
+    color: #000000;
+    background-color: #bdbdbd;
+  }
   .right-panel {
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #343434;
+  }
+  .lang{
+    color: #ccc;
+    font-size: 20px;
+    font-family: cursive;
+    padding: 10px;
+    margin-left: 0;
   }
   

@@ -59,7 +59,8 @@ const CodeCompiler = () => {
     <Box minH="100vh" bg="#0f0a19" color="gray.500" px={6} py={8}>
       <div className="container">
         <div className="left-panel">
-          <select value={selectedLanguage} onChange={(e) => { setSelectedLanguage(e.target.value); setVer(predefinedLanguages.find(lang => lang.id === e.target.value)?.version || '') }}>
+          <h3 className='lang'>Select Language:</h3>
+          <select value={selectedLanguage} onChange={(e) => { setSelectedLanguage(e.target.value); setVer(predefinedLanguages.find(lang => lang.id === e.target.value)?.version || '') }} className='sellang'>
             {predefinedLanguages.map(language => (
               <option key={language.id} value={language.id}>
                 {language.name}
