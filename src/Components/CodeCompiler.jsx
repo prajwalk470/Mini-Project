@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Box } from "@chakra-ui/react";
+// import { Box } from "@chakra-ui/react";
 import ImageToTextConverter from "./Img_to_text";
 import './CodeCompiler.css';
 
@@ -11,6 +12,7 @@ const CodeCompiler = () => {
   const [error, setError] = useState('');
   const [processedData, setProcessedData] = useState("");
   const [ver, setVer] = useState('');
+  const [stdinValue, setStdinValue] = useState('');
 
   const predefinedLanguages = [
     { id: 'ada', name: 'Ada', version: "GNATMAKE 11.1.0" },
@@ -28,7 +30,6 @@ const CodeCompiler = () => {
   const handleProcessedData = (data) => {
     setProcessedData(data);
   };
-
   const compileCode = async () => {
     try {
       const options = {
@@ -44,7 +45,8 @@ const CodeCompiler = () => {
           language: selectedLanguage,
           version: ver,
           code: code,
-          input: null
+          // input: null
+          input: stdinValue
         }
       };
       const response = await axios.request(options);
@@ -57,6 +59,7 @@ const CodeCompiler = () => {
 
   return (
     <Box minH="100vh" bg="#0f0a19" color="gray.500" px={6} py={8}>
+      <h2 className='hed'>Code Compiler Online</h2>
       <div className="container">
         <div className="left-panel">
           <h3 className='lang'>Select Language:</h3>
@@ -83,12 +86,23 @@ const CodeCompiler = () => {
           </button>
 
           {/* Output */}
-          <div className="output">{output || error}</div>
+
         </div>
 
 
         <div className="right-panel">
           <ImageToTextConverter onDataProcessed={handleProcessedData} />
+          <h3 className='op'>Input:</h3>
+          <textarea
+            value={stdinValue}
+            onChange={(e) => setStdinValue(e.target.value)}
+            className="stdin-input"
+            placeholder="Enter input value "
+          ></textarea>
+          <h3 className='op'>Output:</h3>
+          <Box className="output-box" bg="#1A202C" color="white" p="4" borderRadius="md">
+      {output ? output.split('\n').map((line, index) => <div key={index}>{line}</div>) : error}
+    </Box>
         </div>
       </div>
     </Box>

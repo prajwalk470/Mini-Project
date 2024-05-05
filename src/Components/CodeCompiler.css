@@ -1,10 +1,14 @@
 
-  
+  *{
+    padding: 0;
+    margin: 0;
+  }
   .code-input {
     /* height: 50%;  */
     height: 350px;
     resize: vertical; /* Allow vertical resizing */
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom:10px;
     color: rgb(255, 255, 255);
     background-color: #000000;
   }
@@ -21,13 +25,17 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
+  .op{
+    font-size: 20px;
+    color: #ccc;
+  }
   .output {
-    margin-top: 40px;
+    margin-top: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #252525;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #000000;
+    width: 80%;
   }
   .container {
     display: grid;
@@ -36,8 +44,8 @@
   }
   
   .left-panel {
-    padding: 20px;
-    border: 1px solid #2b2b2b;
+    padding: 10px;
+    border: 1px solid #555555;
     display: flex;
     flex-direction: column;
   }
@@ -46,6 +54,7 @@
     font-family: system-ui;
     color: #000000;
     background-color: #bdbdbd;
+    width: 20%;
   }
   .right-panel {
     padding: 20px;
@@ -58,4 +67,16 @@
     padding: 10px;
     margin-left: 0;
   }
-  
+ .stdin-input{
+  height: 100px;
+  width: 80%;
+  background-color: #000000;
+ }
+ .hed{
+  margin-left: 40%;
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: rgb(255 255 255);
+    font-weight: 400;
+    margin-top: 0px;
+ }
