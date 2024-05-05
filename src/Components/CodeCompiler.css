@@ -1,0 +1,49 @@
+/* .container {
+    text-align: center;
+    margin-top: 20px;
+  } */
+  
+  .code-input {
+    height: 200px; /* Adjust as needed */
+    resize: vertical; /* Allow vertical resizing */
+    margin-top: 30px;
+  }
+  
+  .submit-btn {
+    margin-top: 10px;
+    background-color: #1bee22; /* Green */
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 23px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .output {
+    margin-top: 40px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Split into two columns */
+    gap: 20px; /* Add some gap between the two columns */
+  }
+  
+  .left-panel {
+    padding: 20px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .right-panel {
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  

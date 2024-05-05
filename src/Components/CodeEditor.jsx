@@ -1,16 +1,17 @@
 import { useRef, useState } from "react";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, Input } from "@chakra-ui/react"; // Import Input from Chakra UI
 import { Editor } from "@monaco-editor/react";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "../constants";
 import Output from "./Output";
-import ImageToTextConverter from "./Img_to_text"; // Import the ImageToTextConverter component
+import ImageToTextConverter from "./Img_to_text";
 
 const CodeEditor = () => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
   const [language, setLanguage] = useState("javascript");
-  const [processedData, setProcessedData] = useState(""); // State to store processed data
+  const [processedData, setProcessedData] = useState("");
+  const [inputValue, setInputValue] = useState(""); // State for input value
 
   const onMount = (editor) => {
     editorRef.current = editor;
@@ -22,16 +23,18 @@ const CodeEditor = () => {
     setValue(CODE_SNIPPETS[language]);
   };
 
-  // Function to handle processed data from ImageToTextConverter
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   const handleProcessedData = (data) => {
     setProcessedData(data);
-    // Additional logic if needed with processed data
   };
 
   return (
     <Box>
       <HStack spacing={4}>
-        <Box w="50%">
+        <Box w="60%">
           <LanguageSelector language={language} onSelect={onSelect} />
           <Editor
             options={{
@@ -48,12 +51,16 @@ const CodeEditor = () => {
             onChange={(value) => setValue(value)}
           />
         </Box>
-        {/* Pass handleProcessedData function to ImageToTextConverter */}
+        <Input width="300px"
+          placeholder="Enter input here"
+          value={inputValue}
+          onChange={handleInputChange}
+        />
         <ImageToTextConverter onDataProcessed={handleProcessedData} />
-        {/* Render Output component and pass processedData */}
         <Output editorRef={editorRef} language={language} processedData={processedData} />
       </HStack>
     </Box>
   );
 };
+
 export default CodeEditor;
